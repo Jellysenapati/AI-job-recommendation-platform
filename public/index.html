@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Job Recommendation Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+    <main class="layout">
+      <nav class="top-nav card">
+        <div class="brand">
+          <span class="brand-icon">AI</span>
+          <span class="brand-text">Instant AI Resume</span>
+        </div>
+        <div class="nav-actions">
+          <a href="#inputSection" class="nav-link">Features</a>
+          <a href="#resultsSection" class="nav-link">Results</a>
+          <button id="themeToggle" class="theme-toggle nav-theme-btn" type="button" aria-label="Toggle dark mode">
+            Dark mode
+          </button>
+        </div>
+      </nav>
+
+      <header class="hero card">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">AI Job Matching</p>
+            <h1>
+              Find the <span class="hero-highlight">right role</span> from your resume in seconds
+            </h1>
+            <p class="sub">
+              Upload your resume or paste its content. We extract technical skills and rank jobs by
+              relevance score.
+            </p>
+            <div class="hero-cta-row">
+              <a href="#inputSection" class="cta-btn cta-primary">Get Started Free</a>
+              <a href="#resultsSection" class="cta-btn cta-secondary">View Results</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <p class="stat-value">10,000+</p>
+                <p class="stat-label">Resumes analyzed</p>
+              </div>
+              <div class="stat-item">
+                <p class="stat-value">95%</p>
+                <p class="stat-label">Skill match quality</p>
+              </div>
+              <div class="stat-item">
+                <p class="stat-value">24/7</p>
+                <p class="stat-label">AI recommendations</p>
+              </div>
+            </div>
+          </div>
+          <aside class="hero-preview" aria-label="Resume preview mockup">
+            <div class="preview-tag">ATS Optimized</div>
+            <div class="preview-frame">
+              <p class="preview-title">Minimalist Template</p>
+              <div class="preview-line w-40"></div>
+              <div class="preview-line w-55"></div>
+              <div class="preview-line w-32"></div>
+              <div class="preview-gap"></div>
+              <div class="preview-line w-68"></div>
+              <div class="preview-line w-52"></div>
+              <div class="preview-line w-58"></div>
+              <div class="preview-gap"></div>
+              <div class="preview-line w-44"></div>
+              <div class="preview-line w-30"></div>
+              <div class="preview-line w-60"></div>
+              <div class="preview-gap"></div>
+              <div class="preview-line w-70"></div>
+              <div class="preview-line w-47"></div>
+            </div>
+            <p class="preview-pill">AI Powered</p>
+          </aside>
+        </div>
+      </header>
+
+      <section id="inputSection" class="input-grid">
+        <article class="card">
+          <h2>Upload Resume</h2>
+          <p class="card-subtext">Supported formats: PDF and TXT</p>
+          <form id="uploadForm" novalidate>
+            <label for="resumeFile" class="label">Resume File</label>
+            <input type="file" id="resumeFile" accept=".txt,.pdf" required />
+            <button type="submit" id="uploadButton">Get Recommendations</button>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>Paste Resume Text</h2>
+          <p class="card-subtext">Useful when copy-pasting from a document</p>
+          <form id="textForm" novalidate>
+            <label for="resumeText" class="label">Resume Content</label>
+            <textarea
+              id="resumeText"
+              rows="8"
+              placeholder="Paste resume content here..."
+              required
+            ></textarea>
+            <button type="submit" id="textButton">Analyze Resume Text</button>
+          </form>
+        </article>
+      </section>
+
+      <section id="resultsSection" class="card results-card">
+        <div class="results-header">
+          <h2>Results</h2>
+          <p id="status" class="status" role="status" aria-live="polite"></p>
+        </div>
+        <div id="skills"></div>
+        <div id="jobs"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
