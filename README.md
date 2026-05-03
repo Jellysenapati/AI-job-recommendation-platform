@@ -52,9 +52,3 @@ This project is a Node.js + JavaScript MVP that:
 - `POST /api/recommend/upload`
   - form-data key: `resume` (txt/pdf)
 
-## Next Improvements (Production)
-
-- Integrate real job APIs (LinkedIn/Indeed/custom sources)
-- Add embeddings-based semantic matching for better relevance
-- Store user profiles and recommendation history in a database
-- Add authentication and recruiter dashboard
